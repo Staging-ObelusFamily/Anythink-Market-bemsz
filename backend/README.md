@@ -4,6 +4,12 @@ The Anythink Market backend is Node web app written with [Express](https://expre
 
 ## Getting started
 
+Put in .env:
+
+```
+MONGODB_URI=mongodb://localhost:27017/anythink
+```
+
 To start the app use: `./start.sh` from the backend directory.
 
 Make sure your DB is up and running.
