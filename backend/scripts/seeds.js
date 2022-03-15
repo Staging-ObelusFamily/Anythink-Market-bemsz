@@ -45,4 +45,12 @@ const generateData = async () => {
   }
 };
 
-generateData();
+generateData()
+  .then(() => {
+    console.log("Finished seeds");
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.log(`Error while running seeds: ${err.message}`);
+    process.exit(1);
+  });
