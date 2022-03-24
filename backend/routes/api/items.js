@@ -75,7 +75,7 @@ router.get("/", auth.optional, function (req, res, next) {
 
       return Promise.all([
         Item.find(query)
-          .populate("seller")
+          // .populate("seller")
           .limit(Number(limit))
           .skip(Number(offset))
           .sort({ createdAt: "desc" })
@@ -89,7 +89,7 @@ router.get("/", auth.optional, function (req, res, next) {
         return res.json({
           items: await Promise.all(
             items.map(async function (item) {
-              // item.seller = await User.findById(item.seller);
+              item.seller = await User.findById(item.seller);
               return item.toJSONFor(user);
             })
           ),
