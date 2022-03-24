@@ -24,7 +24,7 @@ const generateItem = async (user, i) => {
     description: "A very nice item",
     image: "https://i.imgur.com/zY9gY8Y.jpg",
     price: i * 10,
-    user: user._id,
+    seller: user._id,
     tags: ["tag1", "tag2"],
   });
   await item.save();
